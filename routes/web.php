@@ -47,4 +47,6 @@ Route::middleware(['IsWeb'])->group(function () {
     Route::get('/list_data_tips', [TipsController::class, 'list']);
     Route::get('/create_tips', [TipsController::class, 'store']);
     Route::post('/store_tips', [TipsController::class, 'store']);
+    Route::get('/tips', [TipsController::class, 'tips']);
+    Route::get('/tips/{id}', [TipsController::class, 'detail']);
 });

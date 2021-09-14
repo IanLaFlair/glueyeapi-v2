@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="card m-b-30">
-                    <a href="#" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-bookmark-plus-outline"></i> Create New Tips</a>
+                    <a href="{{ url('/create_tips') }}" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-bookmark-plus-outline"></i> Create New Tips</a>
                 </div>
             </div>
         </div>
