@@ -35,18 +35,31 @@
                         <!-- <h5 class="font-18 text-center"><img src="assets/images/fire-login.png" height="18"> Fire Alarm System Monitoring</h5> -->
                         <h5 class="font-18 text-center">Glu Eye Dashboard</h5>
 
-                        <form class="form-horizontal m-t-30" action="index.html">
+                        <form class="form-horizontal m-t-30" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
+                            @if (Session::has('error_login'))
+                                <div class="form-group">
+                                    <div class="col-12">
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <i class="mdi mdi-account-alert"></i> {{ Session::get('error_login') }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
 
                             <div class="form-group">
                                 <div class="col-12">
                                         <label>Email</label>
-                                    <input class="form-control" type="text" required="" placeholder="Masukan Email Anda">
+                                    <input class="form-control" type="text" required="required" name="email" id="email" placeholder="Masukan Email Anda">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-12">
                                         <label>Password</label>
-                                    <input class="form-control" type="password" required="" placeholder="Masukan Password Anda">
+                                    <input class="form-control" type="password" name="password" id="password" required="required" placeholder="Masukan Password Anda">
                                 </div>
                             </div>
                             <div class="form-group text-center m-t-20">
@@ -67,14 +80,14 @@
         <!-- END wrapper -->
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metismenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/waves.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/metismenu.min.js"></script>
+        <script src="js/jquery.slimscroll.js"></script>
+        <script src="js/waves.min.js"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="js/app.js"></script>
 
     </body>
 

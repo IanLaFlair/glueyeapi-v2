@@ -1,7 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthWebController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthWebController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TipsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(['isOpen'])->group(function () {
+Route::middleware(['IsOpen'])->group(function () {
     Route::get('/', function () {
         return view('auth.login');
     });
@@ -25,8 +30,9 @@ Route::middleware(['isOpen'])->group(function () {
     });
 
     Route::post('/login', [AuthWebController::class, 'login']);
+    // Route::post('/login', 'AuthWebController@login');
 });
 
-Route::middleware(['isWeb'])->group(function () {
+Route::middleware(['IsWeb'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
 });

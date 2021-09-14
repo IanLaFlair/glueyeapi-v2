@@ -15,10 +15,10 @@ class AuthUser
      * @param  \Closure  $next
      * @return mixed
      */
-    protected function redirectTo($request)
-    {
-        if (!$request->expectsJson()) {
-            return route('login');
-        }
-    }
+    // protected function redirectTo($request)
+    // {
+    //     if (!$request->expectsJson()) {
+    //         return route('login');
+    //     }
+    // }
 }
