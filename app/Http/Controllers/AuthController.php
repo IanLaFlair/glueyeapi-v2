@@ -107,9 +107,10 @@ class AuthController extends Controller {
                     $decrypted = Crypt::decrypt($params_check_user->password);
 
                     if($params['password'] == $decrypted) {
-                        $response_success['status'] = "error";
+                        $response_success['status'] = "success";
                         $response_success['code'] = 200;
                         $response_success['msg'] = "sign in sucessful";
+                        $response_success['id'] = $params_check_user->id;
 
                         return response($response_success, 200);
 

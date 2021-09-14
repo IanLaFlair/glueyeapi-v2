@@ -29,6 +29,9 @@ Route::middleware(['IsOpen'])->group(function () {
     });
 
     Route::post('/login', [AuthWebController::class, 'login']);
+
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/signin', [AuthController::class, 'signin']);
 });
 
 Route::middleware(['IsWeb'])->group(function () {
