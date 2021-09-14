@@ -14,34 +14,36 @@
 
         <div class="card m-b-30">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input class="form-control" type="text" required="" placeholder="Masukan judul tips">
+                <form role="form" method="POST" action="{{ url('/store_tips') }}">
+                    {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input class="form-control" name="title" type="text" required="required" placeholder="Masukan judul tips">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Thumbnail</label>
+                                <input class="form-control" accept="image/*" name="thumbnail" type="file"  required="required" placeholder="Masukan thumbnail">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Thumbnail</label>
-                            <input class="form-control" type="file" required="" placeholder="Masukan thumbnail">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Detail</label>
+                                <textarea name="detail" id="detail" required="required" class="summernote"></textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>Detail</label>
-                            <div class="summernote"></div>
+                    <div class="btn-toolbar form-group mb-0">
+                        <div class="">
+                            <button class="btn btn-primary waves-effect waves-light" type="submit"> <span>Post</span> <i class="fab fa-telegram-plane m-l-10"></i> </button>
                         </div>
                     </div>
-                </div>
-                <div class="btn-toolbar form-group mb-0">
-                    <div class="">
-                        <button type="button" class="btn btn-danger waves-effect waves-light m-r-5"> <span>Hapus</span> <i class="far fa-trash-alt"></i></button>
-                        <button class="btn btn-primary waves-effect waves-light"> <span>Post</span> <i class="fab fa-telegram-plane m-l-10"></i> </button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
 
@@ -49,6 +51,7 @@
     <!-- end container-fluid -->
 </div>
 
+@stop
 @section('scriptJS')
 @include('tips.create_js')
 @stop

@@ -19,6 +19,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/test', [TipsController::class, 'list']);
+
 Route::middleware(['IsOpen'])->group(function () {
     Route::get('/', function () {
         return view('auth.login');
@@ -40,4 +42,9 @@ Route::middleware(['IsWeb'])->group(function () {
 
     Route::get('/user', [UserController::class, 'index']);
     Route::get('/list_user', [UserController::class, 'list_user']);
+
+    Route::get('/list_tips', [TipsController::class, 'index']);
+    Route::get('/list_data_tips', [TipsController::class, 'list']);
+    Route::get('/create_tips', [TipsController::class, 'store']);
+    Route::post('/store_tips', [TipsController::class, 'store']);
 });
