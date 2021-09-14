@@ -19,8 +19,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/test', [DashboardController::class, 'dashboard_data']);
-
 Route::middleware(['IsOpen'])->group(function () {
     Route::get('/', function () {
         return view('auth.login');
