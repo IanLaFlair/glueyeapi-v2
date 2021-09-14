@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href=plugins/morris/morris.css">
+    <link rel="stylesheet" href="plugins/morris/morris.css">
 
     <!-- DataTables -->
     <link href="plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />

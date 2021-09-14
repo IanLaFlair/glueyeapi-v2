@@ -19,6 +19,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/test', [DashboardController::class, 'dashboard_data']);
 
 Route::middleware(['IsOpen'])->group(function () {
     Route::get('/', function () {
@@ -30,9 +31,9 @@ Route::middleware(['IsOpen'])->group(function () {
     });
 
     Route::post('/login', [AuthWebController::class, 'login']);
-    // Route::post('/login', 'AuthWebController@login');
 });
 
 Route::middleware(['IsWeb'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard_data', [DashboardController::class, 'dashboard_data']);
 });
