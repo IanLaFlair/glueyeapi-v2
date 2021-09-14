@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ Route::middleware(['isOpen'])->group(function () {
         return view('auth.login');
     });
 
-    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/login', [AuthWebController::class, 'login']);
 });
 
 Route::middleware(['isWeb'])->group(function () {

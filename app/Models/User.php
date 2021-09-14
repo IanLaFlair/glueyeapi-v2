@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model {
     use HasFactory;
     protected $connection = 'mysql';
-    protected $table = 'user';
+    protected $table = 'account';
 }
