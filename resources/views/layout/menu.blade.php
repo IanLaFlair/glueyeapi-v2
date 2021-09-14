@@ -17,19 +17,19 @@
                 <div class="menu-extras topbar-custom navbar p-0">
                     <ul class="navbar-right ml-auto list-inline float-right mb-0">
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link waves-effect" href="{{ url('/dashboard') }}">
                                 <i class="mdi mdi-home-outline"></i> Home
                             </a>
                         </li>
 
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link waves-effect" href="{{ url('/tips') }}">
                                 <i class="mdi mdi-plus-outline"></i> Tips Trick
                             </a>
                         </li>
 
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link waves-effect" href="{{ url('/user') }}">
                                 <i class="mdi mdi-account"></i> List User
                             </a>
                         </li>

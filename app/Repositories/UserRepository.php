@@ -47,7 +47,9 @@ class UserRepository {
 
     public function list($params = []) {
         $user = User::latest('id');
-        $result = $user->get();
+        $result = $user->where('role','user')
+                        ->get()
+                        ->makeHidden('password');
 
         return $result;
     }

@@ -37,4 +37,7 @@ Route::middleware(['IsOpen'])->group(function () {
 Route::middleware(['IsWeb'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/dashboard_data', [DashboardController::class, 'dashboard_data']);
+
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/list_user', [UserController::class, 'list_user']);
 });
