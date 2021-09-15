@@ -51,5 +51,5 @@ Route::middleware(['IsWeb'])->group(function () {
     Route::get('/tips/{id}', [TipsController::class, 'detail']);
     Route::get('/edit_tips/{id}', [TipsController::class, 'edit']);
     Route::post('/edit_tips/{id}', [TipsController::class, 'edit']);
-    Route::get('/delete/{id}', [TipsController::class, 'delete']);
+    Route::post('/delete_tips/{id}', [TipsController::class, 'delete']);
 });

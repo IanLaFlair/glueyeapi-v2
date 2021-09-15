@@ -94,6 +94,11 @@ class TipsController extends Controller
         return view('tips.edit')->with($data);
     }
 
+    public function delete($id, Request $request) {
+        $this->tipsRepo->delete(['id' => $id]);
+        return redirect('list_tips');
+    }
+
     public function feed_tips() {
         $tips = $this->tipsRepo->load_feed();
 

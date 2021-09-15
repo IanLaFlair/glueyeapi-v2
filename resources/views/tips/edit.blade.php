@@ -56,14 +56,35 @@
                     </div>
                     <div class="btn-toolbar form-group mb-0">
                         <div class="">
-                            <button type="button" class="btn btn-danger waves-effect waves-light m-r-5"> <span>Hapus</span> <i class="far fa-trash-alt"></i></button>
+                            <a data-toggle="modal" data-target=".bs-example-modal-center-delete" class="btn btn-danger waves-effect waves-light m-r-5"> <span>Hapus</span> <i class="far fa-trash-alt"></i></a>
                             <button class="btn btn-primary waves-effect waves-light"> <span>Post</span> <i class="fab fa-telegram-plane m-l-10"></i> </button>
                         </div>
                     </div>
                 </form>
+                <div class="modal fade bs-example-modal-center-delete" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mt-0">Hapus Tips</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah yakin akan menghapus <mark>"{{ $data->title }}"</mark>?
+                            </div>
+                            <form action="{{ url('delete_tips/' . $data->id) }}" method="POST" enctype="multipart/form-data" novalidate>
+                                {{ csrf_field() }}
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </div>
+                            </form>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
             </div>
         </div>
-
     </div>
     <!-- end container-fluid -->
 </div>
