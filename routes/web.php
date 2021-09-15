@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/test', [TipsController::class, 'list']);
+Route::get('/test', [TipsController::class, 'feed_tips']);
 
 Route::middleware(['IsOpen'])->group(function () {
     Route::get('/', function () {
@@ -49,4 +49,7 @@ Route::middleware(['IsWeb'])->group(function () {
     Route::post('/store_tips', [TipsController::class, 'store']);
     Route::get('/tips', [TipsController::class, 'feed_tips']);
     Route::get('/tips/{id}', [TipsController::class, 'detail']);
+    Route::get('/edit_tips/{id}', [TipsController::class, 'edit']);
+    Route::post('/edit_tips/{id}', [TipsController::class, 'edit']);
+    Route::get('/delete/{id}', [TipsController::class, 'delete']);
 });

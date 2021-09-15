@@ -45,6 +45,8 @@ class TipsController extends Controller
                 $this->do_upload('thumbnail', $paramsFilePhoto['name_folder'], $paramsFilePhoto['name_file'], $request);
             }
 
+            $uploadPath = 'upload/thumbnail/' . $paramsFilePhoto['name_folder'];
+            $params['folder'] = $uploadPath;
             $params['title'] = $request->title;
             $params['detail'] = $request->detail;
             $params['created_by'] = $creator_id;
@@ -59,7 +61,24 @@ class TipsController extends Controller
     }
 
     public function feed_tips() {
-        return view('front.index');
+        $tips = $this->tipsRepo->load_feed();
+
+        return view('front.index')->withPosts($tips);
+    }
+
+    public function feed_continous(Request $request) {
+        $output = '';
+        $id = $request->id;
+
+        $posts = $this->tipsRepo->continous_feed();
+    }
+
+    public function detail($id = null) {
+        $tips = $this->tipsRepo->get(['id' => $id]);
+
+        $data = $tips;
+
+        return view('front.detail');
     }
 
     public function do_upload($field = null, $location = null, $file_name = null, $request) {

@@ -17,6 +17,7 @@ class CreateTableTips extends Migration
             $table->id();
             $table->string('title');
             $table->longText('image');
+            $table->longText('folder');
             $table->longText('detail');
             $table->integer('created_by');
             $table->timestamps();

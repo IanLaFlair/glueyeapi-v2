@@ -21,6 +21,10 @@ class TipsRepository {
             $tips->where('image', $params['image']);
         }
 
+        if(isset($params['folder'])) {
+            $tips->where('folder', $params['folder']);
+        }
+
         if(isset($params['detail'])) {
             $tips->where('detail', $params['detail']);
         }
@@ -70,6 +74,10 @@ class TipsRepository {
             $tips->image =  $params['image'];
         }
 
+        if(isset($params['folder'])) {
+            $tips->folder =  $params['folder'];
+        }
+
         if(isset($params['detail'])) {
             $tips->detail =  $params['detail'];
         }
@@ -82,7 +90,24 @@ class TipsRepository {
         return $tips->id;
     }
 
-    public function delete($params = []) {
+    public function load_feed($params = []) {
+        $tips = Tips::latest('id');
 
+        $result = $tips->limit(2)
+                        ->get();
+
+        return $result;
+    }
+
+    public function continous_feed($params = []) {
+        $tips = Tips::where('id', '<', $params['id'])->orderBy('created_at','DESC')->limit(2)->get();
+        return $tips;
+    }
+
+    public function delete($params = []) {
+        if(isset($params['id'])) {
+            $tips = Tips::find($params['id']);
+            $tips->delete();
+        }
     }
 }

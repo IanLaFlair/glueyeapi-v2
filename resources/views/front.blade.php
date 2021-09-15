@@ -13,10 +13,10 @@
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="plugins/morris/morris.css">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/metismenu.min.css" rel="stylesheet" type="text/css">
-    <link href="css/icons.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset ('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset ('css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset ('css/icons.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset ('css/style.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -33,19 +33,19 @@
     <!-- End Footer -->
 
     <!-- jQuery  -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.slimscroll.js"></script>
-    <script src="js/waves.min.js"></script>
+    <script src="{{ asset ('js/jquery.min.js') }}"></script>
+    <script src="{{ asset ('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset ('js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset ('js/waves.min.js') }}"></script>
 
     <!--Morris Chart-->
-    <script src=plugins/morris/morris.min.js"></script>
-    <script src=plugins/raphael/raphael.min.js"></script>
+    <script src="{{ asset ('plugins/morris/morris.min.js') }}"></script>
+    <script src="{{ asset ('plugins/raphael/raphael.min.js') }}"></script>
 
-    <script src="pages/dashboard.init.js"></script>
+    <script src="{{ asset ('pages/dashboard.init.js') }}"></script>
 
     <!-- App js -->
-    <script src="js/app.js"></script>
+    <script src="{{ asset ('js/app.js') }}"></script>
 
      <!-- Custom JS -->
      @yield('scriptJS')
