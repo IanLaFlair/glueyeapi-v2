@@ -14,6 +14,11 @@ class ApiRepository {
     }
 
     public function get_graph_blood($params = []) {
+        $history_blood = BloodSugar::latest('id');
 
+        $result = $history_blood->where('user_id',$params['id'])
+                                ->limit(5)
+                                ->get();
+        return $result;
     }
 }
