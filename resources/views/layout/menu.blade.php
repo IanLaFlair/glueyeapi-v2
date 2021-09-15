@@ -23,7 +23,7 @@
                         </li>
 
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                            <a class="nav-link waves-effect" href="{{ url('/tips') }}">
+                            <a class="nav-link waves-effect" href="{{ url('/list_tips') }}">
                                 <i class="mdi mdi-plus-outline"></i> Tips Trick
                             </a>
                         </li>

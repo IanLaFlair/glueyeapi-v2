@@ -56,7 +56,30 @@ class TipsRepository {
     }
 
     public function store($params = []) {
+        if(isset($params['id'])) {
+            $tips = Tips::find($params['id']);
+        } else {
+            $tips = new Tips;
+        }
 
+        if(isset($params['title'])) {
+            $tips->title =  $params['title'];
+        }
+
+        if(isset($params['image'])) {
+            $tips->image =  $params['image'];
+        }
+
+        if(isset($params['detail'])) {
+            $tips->detail =  $params['detail'];
+        }
+
+        if(isset($params['created_by'])) {
+            $tips->created_by =  $params['created_by'];
+        }
+
+        $tips->save();
+        return $tips->id;
     }
 
     public function delete($params = []) {

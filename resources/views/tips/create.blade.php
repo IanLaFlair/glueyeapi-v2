@@ -14,19 +14,19 @@
 
         <div class="card m-b-30">
             <div class="card-body">
-                <form role="form" method="POST" action="{{ url('/store_tips') }}">
+                <form role="form" method="POST" action="{{ url('/store_tips') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Title</label>
-                                <input class="form-control" name="title" type="text" required="required" placeholder="Masukan judul tips">
+                                <input class="form-control" name="title" id="title" type="text" required="required" placeholder="Masukan judul tips">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Thumbnail</label>
-                                <input class="form-control" accept="image/*" name="thumbnail" type="file"  required="required" placeholder="Masukan thumbnail">
+                                <input class="form-control" accept="image/*" name="thumbnail" id="thumbnail" type="file"  required="required" placeholder="Masukan thumbnail">
                             </div>
                         </div>
                     </div>

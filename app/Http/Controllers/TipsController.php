@@ -34,7 +34,26 @@ class TipsController extends Controller
         if($request->isMethod('POST')) {
             $creator_id = Auth::user()->id;
 
-            // $params['']
+            if($request->has('thumbnail')) {
+                $paramsFilePhoto['name_folder'] = 'thumbnail_'
+                                                    .date('Ymd').'_'.date('his');
+                $paramsFilePhoto['name_file'] = 'thumbnail_'
+                                                    .date('Ymd').'_'.date('his').'_'
+                                                    .$request->file('thumbnail')->getClientOriginalName();
+                $paramsFilePhoto['type_file'] = $request->file('thumbnail')->extension();
+
+                $this->do_upload('thumbnail', $paramsFilePhoto['name_folder'], $paramsFilePhoto['name_file'], $request);
+            }
+
+            $params['title'] = $request->title;
+            $params['detail'] = $request->detail;
+            $params['created_by'] = $creator_id;
+            $params['image'] = $paramsFilePhoto['name_file'];
+
+            $this->tipsRepo->store($params);
+
+            return redirect('list_tips');
+
         }
         return view('tips.create');
     }
