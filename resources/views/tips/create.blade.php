@@ -14,7 +14,7 @@
 
         <div class="card m-b-30">
             <div class="card-body">
-                <form role="form" method="POST" action="{{ url('/store_tips') }}" enctype="multipart/form-data">
+                <form role="form" method="POST" action="{{ url('/edit_tips/.$data->id') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-6">

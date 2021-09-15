@@ -60,6 +60,14 @@ class TipsController extends Controller
         return view('tips.create');
     }
 
+    public function edit($id = "") {
+        $tips = $this->tipsRepo->get(['id' => $id]);
+        // dd($tips);
+
+        $data['data'] = $tips;
+        return view('tips.edit')->with($data);
+    }
+
     public function feed_tips() {
         $tips = $this->tipsRepo->load_feed();
 

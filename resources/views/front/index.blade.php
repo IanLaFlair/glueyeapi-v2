@@ -23,6 +23,7 @@
                             <div class="col-8">
                                 <div class="card-body">
                                     <h4 class="card-title font-16 mt-0">Card title</h4>
+                                    <p><small>14 September 2021</small></p>
                                     <a href="#" class="btn btn-sm  btn-primary waves-effect waves-light">Baca</a>
                                 </div>
                             </div>
@@ -44,6 +45,7 @@
                             <div class="col-8">
                                 <div class="card-body">
                                     <h4 class="card-title font-16 mt-0">Card title</h4>
+                                    <p><small>14 September 2021</small></p>
                                     <a href="#" class="btn btn-sm  btn-primary waves-effect waves-light">Baca</a>
                                 </div>
                             </div>
@@ -65,6 +67,7 @@
                             <div class="col-8">
                                 <div class="card-body">
                                     <h4 class="card-title font-16 mt-0">Card title</h4>
+                                    <p><small>14 September 2021</small></p>
                                     <a href="#" class="btn btn-sm  btn-primary waves-effect waves-light">Baca</a>
                                 </div>
                             </div>
