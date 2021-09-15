@@ -112,12 +112,12 @@ class TipsController extends Controller
         $posts = $this->tipsRepo->continous_feed();
     }
 
-    public function detail($id = null) {
+    public function detail($id) {
         $tips = $this->tipsRepo->get(['id' => $id]);
 
-        $data = $tips;
+        $data['data'] = $tips;
 
-        return view('front.detail');
+        return view('front.detail')->with($data);
     }
 
     public function do_upload($field = null, $location = null, $file_name = null, $request) {

@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="card-body">
-                                    <img class="card-img-top img-fluid" src="images/small/img-1.jpg" alt="Card image cap">
+                                    <img class="d-flex align-self-center rounded mr-3" src="images/small/img-1.jpg" height="64" alt="Card image cap">
                                 </div>
                             </div>
                             <div class="col-8">
@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="card-body">
-                                    <img class="card-img-top img-fluid" src="images/small/img-1.jpg" alt="Card image cap">
+                                    <img class="d-flex align-self-center rounded mr-3"  height="64" src="images/small/img-1.jpg" alt="Card image cap">
                                 </div>
                             </div>
                             <div class="col-8">
@@ -61,7 +61,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="card-body">
-                                    <img class="card-img-top img-fluid" src="images/small/img-1.jpg" alt="Card image cap">
+                                    <img class="d-flex align-self-center rounded mr-3"  height="64" src="images/small/img-1.jpg" alt="Card image cap">
                                 </div>
                             </div>
                             <div class="col-8">

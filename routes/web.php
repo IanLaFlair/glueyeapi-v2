@@ -32,6 +32,9 @@ Route::middleware(['IsOpen'])->group(function () {
 
     Route::post('/login', [AuthWebController::class, 'login']);
 
+    Route::get('/tips', [TipsController::class, 'feed_tips']);
+    Route::get('/tips/{id}', [TipsController::class, 'detail']);
+
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/signin', [AuthController::class, 'signin']);
 });
