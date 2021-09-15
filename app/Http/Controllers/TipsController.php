@@ -58,6 +58,10 @@ class TipsController extends Controller
         return view('tips.create');
     }
 
+    public function feed_tips() {
+        return view('front.index');
+    }
+
     public function do_upload($field = null, $location = null, $file_name = null, $request) {
         $uploadPath = public_path('upload/thumbnail/' . $location);
 
