@@ -60,9 +60,35 @@ class TipsController extends Controller
         return view('tips.create');
     }
 
-    public function edit($id = "") {
+    public function edit($id = "", Request $request) {
         $tips = $this->tipsRepo->get(['id' => $id]);
-        // dd($tips);
+        if($request->isMethod('POST')) {
+            $creator_id = Auth::user()->id;
+
+            if($request->has('thumbnail')) {
+                $paramsFilePhoto['name_folder'] = 'thumbnail_'
+                                                    .date('Ymd').'_'.date('his');
+                $paramsFilePhoto['name_file'] = 'thumbnail_'
+                                                    .date('Ymd').'_'.date('his').'_'
+                                                    .$request->file('thumbnail')->getClientOriginalName();
+                $paramsFilePhoto['type_file'] = $request->file('thumbnail')->extension();
+
+                $uploadPath = 'upload/thumbnail/' . $paramsFilePhoto['name_folder'];
+                $params['folder'] = $uploadPath;
+                $params['image'] = $paramsFilePhoto['name_file'];
+                $this->do_upload('thumbnail', $paramsFilePhoto['name_folder'], $paramsFilePhoto['name_file'], $request);
+            }
+
+            $params['id'] = $id;
+            $params['title'] = $request->title;
+            $params['detail'] = $request->detail;
+            $params['created_by'] = $creator_id;
+
+            $this->tipsRepo->store($params);
+
+            return redirect('list_tips');
+
+        }
 
         $data['data'] = $tips;
         return view('tips.edit')->with($data);

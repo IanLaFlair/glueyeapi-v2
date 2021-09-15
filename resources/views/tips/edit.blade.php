@@ -26,9 +26,24 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Thumbnail</label>
-                                <label class="btn btn-sm btn-info"><i class="mdi mdi-eye"></i></label>
-                                <input class="form-control" accept="image/*" name="thumbnail" id="thumbnail" type="file"  required="required" placeholder="Ubah thumbnail">
+                                <a class="btn btn-sm btn-info" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-eye"></i></a>
+                                <input class="form-control" accept="image/*" name="thumbnail" id="thumbnail" type="file" placeholder="Ubah thumbnail">
                             </div>
+                            <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title mt-0">Thumbnail</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img class="card-img-top img-fluid" src="{{ url($data->folder.'/'.$data->image) }}" alt="Card image cap">
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
                         </div>
                     </div>
                     <div class="row">
