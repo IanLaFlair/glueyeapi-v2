@@ -37,6 +37,7 @@ Route::middleware(['IsOpen'])->group(function () {
 
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/signin', [AuthController::class, 'signin']);
+    Route::post('/history_blood', [ApiController::class, 'history_blood']);
 });
 
 Route::middleware(['IsWeb'])->group(function () {
